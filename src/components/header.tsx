@@ -1,32 +1,38 @@
 import { MenuIcon } from 'lucide-react'
-import { Card, CardContent } from "./ui/card";
-import logo from '@/assets/logo-nlw-expert.svg'
-import { Button } from './ui/button';
 import { NavLink } from 'react-router-dom';
+import logo from '@/assets/logo-nlw-expert.svg'
+
+import { Button } from './ui/button';
+import { SideMenu } from './side-menu';
+import { ModeToggle } from './mode-toggle';
+import { Card, CardContent } from "./ui/card";
 import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
-import SideMenu from './side-menu';
 
 
-export default function Header() {
+export function Header() {
   return (
     <header>
-      <Card className="rounded-t-none">
-        <CardContent className="p-5 flex items-center justify-between">
+      <Card className="rounded-t-none ">
+        <CardContent className="p-5 flex items-center justify-between mx-auto max-w-6xl">
           <NavLink to="/">
-            <img src={logo} alt="NLW Expert" height={24} width={120} className='brightness-200 grayscale'/>
+            <img src={logo} alt="NLW Expert" height={24} width={120} className='dark:brightness-200 dark:grayscale grayscale-0 brightness-0'/>
           </NavLink >
 
-           <Sheet>
-            <SheetTrigger asChild>
-              <Button variant="outline" size="icon">
-                <MenuIcon size={20}/>
-              </Button>
-            </SheetTrigger>
+          <div className="flex gap-2">
+            <ModeToggle/>
 
-            <SheetContent className="p-0">
-              <SideMenu />          
-            </SheetContent>
-          </Sheet> 
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="outline" size="icon">
+                  <MenuIcon size={20}/>
+                </Button>
+              </SheetTrigger>
+
+              <SheetContent className="p-0">
+                <SideMenu />          
+              </SheetContent>
+            </Sheet>
+          </div>
         </CardContent>
       </Card>
     </header>

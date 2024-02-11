@@ -1,8 +1,28 @@
+import { setDate } from 'date-fns'
+
+import { NoteCard } from './components/note-card';
+import { Greetings } from './components/greetings';
+import { SearchInput } from "@/components/search-input";
+import { NewNoteCard } from './components/new-note-card';
+
+
 export function Home() {
   return (
-    <main className="flex flex-col gap-16 h-[calc(100vh-10rem)] m-20 p-10 bg-neutral-900 rounded-lg drop-shadow-2xl">     
-      <div className="flex-1 p-14 flex flex-col">
-        <h1 className="text-headline text-2xl">Home</h1>
+    <main className="mx-auto max-w-6xl my-12">
+      <div className="px-5 pt-5">
+        <Greetings />
+      </div>
+
+      <div className="px-5 mt-6">
+        <SearchInput/>
+      </div>
+
+      <div className="px-5 pt-5 grid grid-cols-3 gap-6 auto-rows-[250px]">  
+        <NewNoteCard />
+
+        {[1,2,3,4].map((_item, id) => (
+          <NoteCard key={id} note={{ date: setDate(new Date(), id) }} />
+        ))}  
       </div>
     </main>
   )

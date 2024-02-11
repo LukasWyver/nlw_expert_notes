@@ -1,6 +1,6 @@
 import { Card, CardContent } from "./ui/card";
 
-export default function Footer() {
+export function Footer() {
   return (
     <footer className="mt-[4.5rem]">
       <Card className="rounded-b-none">

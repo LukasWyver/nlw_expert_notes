@@ -5,7 +5,7 @@ import { Button } from "./ui/button";
 import { Separator } from "./ui/separator";
 import { SheetHeader, SheetTitle } from "./ui/sheet";
 
-export default function SideMenu() {
+export function SideMenu() {
   return (
     <>
       <SheetHeader className="text-left px-5 py-8">
@@ -22,7 +22,7 @@ export default function SideMenu() {
         </Button>
 
         <Button variant="outline" className="gap-2 justify-start" asChild>
-          <NavLink to="/bookings">
+          <NavLink to="/notes">
             <NotepadTextIcon size={16}/>
             Notas
           </NavLink>
