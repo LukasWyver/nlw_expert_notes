@@ -17,11 +17,17 @@ export function Home() {
         <SearchInput/>
       </div>
 
-      <div className="px-5 pt-5 grid grid-cols-3 gap-6 auto-rows-[250px]">  
+      <div className="px-5 pt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[250px]">  
         <NewNoteCard />
 
-        {[1,2,3,4].map((_item, id) => (
-          <NoteCard key={id} note={{ date: setDate(new Date(), id) }} />
+        {[1,2,3,4].map((_item, id) => (          
+          <NoteCard   
+            key={id}           
+            note={{ 
+              date: setDate(new Date(), id),
+              content: 'No app do NLW vamos criar um layout incrível, assim podemos entregar a melhor experiência para a comunidade. Na aplicação React vamos criar um projeto que permite o usuário salvar notas em texto ou áudio.'
+            }}
+          />          
         ))}  
       </div>
     </main>

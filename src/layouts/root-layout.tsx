@@ -1,6 +1,9 @@
+import { Outlet } from "react-router-dom";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
-import { Outlet } from "react-router-dom";
+import { Toaster } from "@/components/ui/sonner"
+
+
 
 export function RootLayout(){
   return (
@@ -9,6 +12,7 @@ export function RootLayout(){
       <div className="flex-1">
         <Outlet />
       </div>
+      <Toaster/>
       <Footer/>
     </div>
   )
