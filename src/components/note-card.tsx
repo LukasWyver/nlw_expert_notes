@@ -61,7 +61,6 @@ export function NoteCard({ note }: NoteCardProps) {
         </div>
 
         <DialogFooter>
-          <Button className='w-full font-semibold'>Compartilhar</Button>
           <Button 
             variant="destructive" 
             disabled={isDeleteLoading} 
