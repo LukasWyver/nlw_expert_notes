@@ -1,6 +1,6 @@
 import { MenuIcon } from 'lucide-react'
 import { NavLink } from 'react-router-dom';
-import logo from '@/assets/logo-nlw-expert.svg'
+import logo from '@/assets/logo-fala-ai.svg'
 
 import { Button } from './ui/button';
 import { SideMenu } from './side-menu';
@@ -15,7 +15,7 @@ export function Header() {
       <Card className="rounded-t-none ">
         <CardContent className="p-5 flex items-center justify-between mx-auto max-w-6xl">
           <NavLink to="/">
-            <img src={logo} alt="NLW Expert" height={24} width={120} className='dark:brightness-200 dark:grayscale grayscale-0 brightness-0'/>
+            <img src={logo} alt="fala ai" height={24} width={120} className='dark:brightness-200 dark:grayscale grayscale-0 brightness-0'/>
           </NavLink >
 
           <div className="flex gap-2">

@@ -1,15 +1,15 @@
 import { Route, Routes } from 'react-router-dom'
 import { RootLayout } from '@/layouts/root-layout'
 
-import { Home } from '@/pages/(home)'
-import { Notes } from '@/pages/notes'
+import { HomePage } from '@/pages/(home)'
+import { NotesPage } from '@/pages/notes'
 
 export function Router() {
   return (
     <Routes>
       <Route path='/' element={<RootLayout/>}>      
-        <Route path="/" element={<Home />} />
-        <Route path="/notes" element={<Notes />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/notes" element={<NotesPage />} />
       </Route>
     </Routes>
   )

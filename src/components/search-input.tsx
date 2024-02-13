@@ -7,6 +7,7 @@ import { Input } from '@/components/ui/input';
 import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form";
 
 import { z } from "zod";
+import { useNavigate } from 'react-router-dom';
 
 const formSchema = z.object({
   search: z
@@ -27,8 +28,12 @@ export function SearchInput({defaultValues}: SearchProps) {
     defaultValues,
   });
 
+  const navigate = useNavigate();
+
+
   function handleSubmit(data: z.infer<typeof formSchema>){
-    alert(JSON.stringify(data,null,2))
+    // alert(JSON.stringify(data,null,2))
+    navigate(`/notes?search=${data.search}`);
   };
 
   return (
